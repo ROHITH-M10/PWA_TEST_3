@@ -3,11 +3,11 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
+  base: "/PWA_TEST_3/",  //  Set the correct base for GitHub Pages
   plugins: [
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      base: "/PWA_TEST_3/",
       devOptions: {
         enabled: true
       },
@@ -18,10 +18,10 @@ export default defineConfig({
         theme_color: "#ffffff",
         background_color: "#ffffff",
         display: "standalone",
-        start_url: "/PWA_TEST_3/",
+        start_url: "/PWA_TEST_3/", //  Ensure correct start URL
         icons: [
           {
-            src: "/PWA_TEST_3/icons/favicon.png",
+            src: "/PWA_TEST_3/icons/favicon.png", // Make sure this file exists
             sizes: "192x192",
             type: "image/png"
           },
@@ -33,6 +33,5 @@ export default defineConfig({
         ]
       }
     })
-  ],
-  base: "/PWA_TEST_3/"
+  ]
 });
