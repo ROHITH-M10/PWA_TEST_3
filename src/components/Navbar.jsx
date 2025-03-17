@@ -16,21 +16,22 @@ function Navbar({ onHomeClick }) {
   return (
     <div className="go-to-home-nav-bar">
       <button onClick={onHomeClick} className="home-button">
-        Home
+      <i className="fa fa-home"></i>
       </button>
       <div className="menu-container">
-        <i onClick={toggleDropdown} className="fa fa-bars"></i>
+        <i onClick={  toggleDropdown} className="fa fa-server"></i>
+        <i className="fa fa-sign-in"></i>
 
         {isDropdownOpen && (
           <div className="menu-dropdown">
             <div 
-              className={`menu-dropdown-item ${selectedOption === "Metaflo" ? "selected" : ""}`} 
+              className={`menu-dropdown-item ${selectedOption === "Metaflo" ? "server-selected" : ""}`} 
               onClick={() => handleSelect("Metaflo")}
             >
               Metaflo
             </div>
             <div 
-              className={`menu-dropdown-item ${selectedOption === "AIMS Metaflo" ? "selected" : ""}`} 
+              className={`menu-dropdown-item ${selectedOption === "AIMS Metaflo" ? "server-selected" : ""}`} 
               onClick={() => handleSelect("AIMS Metaflo")}
             >
               AIMS Metaflo
