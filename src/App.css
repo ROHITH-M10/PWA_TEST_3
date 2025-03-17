@@ -41,6 +41,16 @@ body {
   padding: 10px;
 }
 
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6vh;
+  gap: 10px;
+  background-color: white;
+}
+
 /* Home Page */
 .home-page {
   text-align: center;
@@ -166,6 +176,7 @@ body {
   cursor: pointer;
   border-radius: 5px;
   transition: 0.3s;
+  width: 100%;
 }
 
 .dropbtn:hover {
@@ -221,6 +232,36 @@ iframe {
   height: 94vh;
   border: none;
 }
+
+/* hide admin navbar */
+.navbar.navbar-light.navbar-expand-lg {
+  display: none !important;
+}
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Attempt to hide the navbar using an overlay */
+.iframe-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6vh;
+  background-color: white; /* Match background to hide navbar */
+  z-index: 10;
+}
+
 
 /* Footer */
 .footer {
