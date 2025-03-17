@@ -122,6 +122,7 @@ body {
   gap: 15px;
   margin: 20px;
   padding: 20px 0px;
+  flex-wrap: wrap;
 }
 
 .login-button,
@@ -132,7 +133,7 @@ body {
   padding: 10px 25px;
   font-size: 1.4rem;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 20px;
   transition: 0.3s;
   border: solid 1px rgb(165, 42, 42);
 }
@@ -190,7 +191,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: 10px;
-  padding: 20px 0px;
+  padding: 5px 0px;
   width: 50%;
 }
 
@@ -201,7 +202,7 @@ body {
   padding: 10px;
   font-size: 1.2rem;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 20px;
   transition: 0.3s;
   width: 100%;
 }
@@ -216,11 +217,11 @@ body {
 .guest-dropdown-content {
   display: block;
   position: absolute;
-  background-color: white;
+  background-color: #f9f9f9;
   min-width: 200px;
   top: 100%; /* Position below the button */
-  left: 0;
-  margin-top: 5px; /* Add space between button and dropdown */
+  /* left: 0; */
+  margin-top: 0px; /* Add space between button and dropdown */
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   overflow: hidden;
@@ -274,6 +275,7 @@ body {
 
 .footer-text{
   font-size: 1.2rem;
+  padding-bottom: 10px;
   font-weight: bold;
 }
 
@@ -283,7 +285,7 @@ body {
     font-size: 1rem;
   }
   .carousel-image{
-    width: 80%;
+    width: 90%;
   }
 
   .guest-dropdown-button-container{
