@@ -27,7 +27,7 @@ function Guest({ openDropdown, toggleDropdown, handleSelect, selectedUrl }) {
 
       {/* iFrame to display selected page */}
       {selectedUrl && (
-        <div className="iframe-container">
+        <div className="guest-iframe-container">
           <iframe src={selectedUrl} title="content-frame"></iframe>
         </div>
       )}

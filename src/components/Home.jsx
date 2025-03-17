@@ -48,7 +48,7 @@ function Home({ handleLogin, handleGuest }) {
       
 
       {/* Buttons */}
-      <div className="button-container">
+      <div className="home-button-container">
         <button className="login-button" onClick={handleLogin}>
           Login
         </button>
