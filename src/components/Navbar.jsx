@@ -22,15 +22,15 @@ function Navbar({ onHomeClick }) {
         <i onClick={toggleDropdown} className="fa fa-bars"></i>
 
         {isDropdownOpen && (
-          <div className="dropdown-menu">
+          <div className="menu-dropdown">
             <div 
-              className={`dropdown-item ${selectedOption === "Metaflo" ? "selected" : ""}`} 
+              className={`menu-dropdown-item ${selectedOption === "Metaflo" ? "selected" : ""}`} 
               onClick={() => handleSelect("Metaflo")}
             >
               Metaflo
             </div>
             <div 
-              className={`dropdown-item ${selectedOption === "AIMS Metaflo" ? "selected" : ""}`} 
+              className={`menu-dropdown-item ${selectedOption === "AIMS Metaflo" ? "selected" : ""}`} 
               onClick={() => handleSelect("AIMS Metaflo")}
             >
               AIMS Metaflo

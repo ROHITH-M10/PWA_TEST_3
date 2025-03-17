@@ -7,7 +7,7 @@ function Guest({ openDropdown, toggleDropdown, handleSelect, selectedUrl }) {
   return (
     <div className="guest-page">
       {/* Dropdowns */}
-      <div className="dropdown-button-container">
+      <div className="guest-dropdown-button-container">
         <Dropdown
           title="General Pages"
           items={generalPages}
