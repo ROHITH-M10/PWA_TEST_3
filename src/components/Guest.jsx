@@ -1,5 +1,6 @@
 import React from "react";
 import Dropdown from "./Dropdown";
+// Import pages
 import generalPages from "../data/generalPages.json";
 import domainOne from "../data/domainOnePages.json";
 
