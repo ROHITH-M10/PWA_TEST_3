@@ -1,6 +1,8 @@
 import React from "react";
 import { Carousel } from "antd";
 import Footer from "./Footer";
+import Sample_Image_1 from "../../public/images/sample_image_amrita_1.jpg";
+import Sample_Image_2 from "../../public/images/sample_image_amrita_2.jpg";
 
 function Home({ handleLogin, handleGuest }) {
   return (
@@ -28,14 +30,14 @@ function Home({ handleLogin, handleGuest }) {
         <Carousel autoplay autoplaySpeed={5000} className="carousel">
             <div>
             <img
-                src="https://admin.amritahospitals.org/sites/default/files/amrita%20logo.svg"
+                src={Sample_Image_1}
                 alt="Amrita Hospital Logo"
                 className="carousel-image"
             />
             </div>
             <div>
             <img
-                src="https://admin.amritahospitals.org/sites/default/files/amrita%20logo.svg"
+                src={Sample_Image_2}
                 alt="Amrita Hospital Logo"
                 className="carousel-image"
 
