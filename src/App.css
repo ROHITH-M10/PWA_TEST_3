@@ -64,7 +64,7 @@ body {
   color: rgb(165, 42, 42);
 }
 
-/*Mondal Styling */
+/*Modal Styling */
 
 .modal-text{
   font-size: 1.2rem;
@@ -79,7 +79,7 @@ body {
   margin-top: 10px;
 }
 
-.mondal-login-button, .mondal-guest-button{
+.modal-login-button, .modal-guest-button{
   background-color: rgb(165, 42, 42);
   border: none;
   color: white;

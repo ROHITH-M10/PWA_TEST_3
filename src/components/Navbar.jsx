@@ -19,7 +19,7 @@ function Navbar({ onHomeClick }) {
       <i className="fa fa-home"></i>
       </button>
       <div className="menu-container">
-        <i onClick={  toggleDropdown} className="fa fa-server"></i>
+        <i onClick={toggleDropdown} className="fa fa-server"></i>
         <i className="fa fa-sign-in"></i>
 
         {isDropdownOpen && (

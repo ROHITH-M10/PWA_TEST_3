@@ -16,6 +16,11 @@ function App() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isGuest, setIsGuest] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
+  // Modal for first-time using the app
+  const [isModalVisible, setIsModalVisible] = useState(
+    !localStorage.getItem("guestUser")
+  );
+  
 
   function toggleDropdown(title) {
     setOpenDropdown((prev) => (prev === title ? null : title));
@@ -36,11 +41,17 @@ function App() {
   function handleLogin() {
     setIsLogin(true);
     setIsGuest(false);
+    console.log("Login Clicked");
+    console.log("Modal visibility off");
+    setIsModalVisible(false);
   }
 
   function handleGuest() {
     setIsGuest(true);
     setIsLogin(false);
+    console.log("Guest Clicked");
+    console.log("Modal visibility off");
+    setIsModalVisible(false);
   }
 
   return (
@@ -52,6 +63,8 @@ function App() {
         <Home 
           handleLogin={handleLogin} 
           handleGuest={handleGuest} 
+          isModalVisible={isModalVisible}
+          setIsModalVisible={setIsModalVisible}
         />
       ) : isLogin ? (
         // Show login page inside an iframe

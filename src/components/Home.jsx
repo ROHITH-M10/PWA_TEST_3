@@ -4,21 +4,38 @@ import Footer from "./Footer";
 import Sample_Image_1 from "../../public/images/sample_image_amrita_1.jpg";
 import Sample_Image_2 from "../../public/images/sample_image_amrita_2.jpg";
 
-function Home({ handleLogin, handleGuest }) {
-  const [isModalVisible, setIsModalVisible] = useState(false);
+function Home({ handleLogin, handleGuest, isModalVisible, setIsModalVisible }) {
 
-  // Check localStorage on mount
-  useEffect(() => {
-    const guestStatus = localStorage.getItem("guestUser");
-    if (!guestStatus) {
-      setIsModalVisible(true); // Show modal if no selection is saved
-    }
-  }, []);
+
+// Check localStorage on mount
+useEffect(() => {
+  const guestStatus = localStorage.getItem("guestUser");
+  console.log("Guest Status: ", guestStatus);
+  if (!guestStatus && isModalVisible === true) {
+    console.log("Modal visibility on");
+    setIsModalVisible(true); // Show modal if no selection is saved
+  }
+  else {
+    console.log("Modal visibility off");
+    setIsModalVisible(false); // Hide modal if selection is saved
+  }
+  
+}, []);
+
+
+  
 
   // Handle Guest Selection
   const handleGuestSelection = () => {
-    localStorage.setItem("guestUser", "true"); // Save selection
-    setIsModalVisible(false); // Hide modal
+    handleGuest(); // Call guest function
+    setIsModalVisible(false); // Close
+  };
+
+  // Save Guest Selection
+  const saveGuestSelection = () => {
+    console.log("Guest Data Saved");
+    localStorage.setItem("guestUser", true); // Save guest selection
+    setIsModalVisible(false); // Close modal
     handleGuest(); // Call guest function
   };
 
@@ -33,8 +50,8 @@ function Home({ handleLogin, handleGuest }) {
       >
         <p className="modal-text">Would you like to log in or continue as a guest?</p>
         <div className="modal-button-container">
-          <button className="mondal-login-button" onClick={handleLogin}>Login</button>
-          <button className="mondal-guest-button" onClick={handleGuestSelection}>Continue as Guest</button>
+          <button className="modal-login-button" onClick={handleLogin}>Login</button>
+          <button className="modal-guest-button" onClick={saveGuestSelection}>Continue as Guest</button>
         </div>
       </Modal>
 
@@ -50,7 +67,7 @@ function Home({ handleLogin, handleGuest }) {
       <p className="home-text">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam sapiente nulla ex nostrum dolor molestias expedita molestiae nihil! Quas quidem sed doloribus quasi iusto sunt ullam deserunt, enim quae consequatur!
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos perferendis numquam excepturi architecto reprehenderit doloribus aliquam! Veritatis nihil recusandae officiis vitae consequuntur? Vero molestias numquam quaerat culpa esse vitae quo?
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores unde ratione corporis suscipit accusantium voluptatum doloremque qui quos alias nam repudiandae et, nobis assumenda veniam dolor hic iste voluptates sint.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, distinctio quidem ut et atque, eaque inventore minima explicabo a deserunt dolore nemo quasi suscipit maiores culpa tempora dolor totam fugit?
       </p>
 
       {/* Carousel */}
