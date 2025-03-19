@@ -5,7 +5,7 @@ import Guest from "./Guest";
 import Sample_Image_1 from "../../public/images/sample_image_amrita_1.jpg";
 import Sample_Image_2 from "../../public/images/sample_image_amrita_2.jpg";
 
-function Home({handleGuest, isModalVisible, setIsModalVisible, setAdminUrl, openDropdown, toggleDropdown, handleSelect, selectedUrl}) {
+function Home({handleGuest, isModalVisible, setIsModalVisible, setAdminUrl, openDropdown, toggleDropdown, handleSelect, selectedUrl, selectedOption, setSelectedOption}) {
 
 
 // // Check localStorage on mount
@@ -33,17 +33,26 @@ const servers = {
   useEffect(() => {
     const server = localStorage.getItem("server");
     console.log("Server Selected: ", server);
-    if (!server && isModalVisible === true) {
+    if (!server && isModalVisible === false) {
       console.log("Modal visibility on");
       setIsModalVisible(true); // Show modal if no selection is saved
     }
     else {
+      if (!server) {
+        setAdminUrl(servers[selectedOption]);
+        console.log("Server selection saved: ", selectedOption);
+
+      }
+      else {
       console.log("Modal visibility off");
+      console.log("Server selection saved: ", server);
       setIsModalVisible(false); // Hide modal if selection is saved
       setAdminUrl(servers[server]);
+      setSelectedOption(server);
       console.log("Server selection saved: ", server);
       console.log("Admin URL: ", servers[server]);
       // update server
+      }
 
     }
 
@@ -71,6 +80,10 @@ const servers = {
     console.log("Server Selected: ", server);
     localStorage.setItem("server", server); // Save server selection
     setIsModalVisible(false); // Close modal
+    setAdminUrl(servers[server]);
+    console.log("Admin URL: ", servers[server]);
+    setSelectedOption(server);
+
   };
 
   return (

@@ -1,25 +1,15 @@
 import React, { useState } from "react";
 
-function Navbar({ onHomeClick, setAdminUrl, handleLogin }) {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("Metaflo");
+function Navbar({ onHomeClick, setAdminUrl, handleLogin, selectedOption, setSelectedOption, handleServerSelect, setIsDropdownOpen, isDropdownOpen }) {
 
-  const servers = {
-    "Metaflo": "https://research.amritahospitals.org/",
-    "AIMS Metaflo": "https://research-int.amritahospitals.org/",
-    "L1-Staging-Metaflo": "http://test-ahis-l1.amrita.edu/"
-  }
+
+
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const handleServerSelect = (option) => {
-    setSelectedOption(option);
-    setIsDropdownOpen(false); // Close dropdown after selection
-    setAdminUrl(servers[option]);
-    console.log("Selected Server:", option);
-  };
+
 
   return (
     <div className="go-to-home-nav-bar">

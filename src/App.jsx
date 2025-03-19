@@ -19,7 +19,7 @@ function App() {
   const [isLogin, setIsLogin] = useState(false);
   // Modal for first-time using the app
   const [isModalVisible, setIsModalVisible] = useState(
-    !localStorage.getItem("guestUser")
+    false
   );
 
   // base URL for the iframe
@@ -28,6 +28,25 @@ function App() {
   // complete URL for the iframe
   // const [completeUrl, setCompleteUrl] = useState("");
   
+  const [selectedOption, setSelectedOption] = useState("Metaflo");
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+
+  const servers = {
+    "Metaflo": "https://research.amritahospitals.org/",
+    "AIMS Metaflo": "https://research-int.amritahospitals.org/",
+    "L1-Staging-Metaflo": "http://test-ahis-l1.amrita.edu/"
+  }
+
+
+  const handleServerSelect = (option) => {
+    setSelectedOption(option);
+    setIsDropdownOpen(false); // Close dropdown after selection
+    setAdminUrl(servers[option]);
+    console.log("Selected Server:", option);
+  };
+
 
   function toggleDropdown(title) {
     setOpenDropdown((prev) => (prev === title ? null : title));
@@ -68,7 +87,17 @@ function App() {
   return (
     <div>
       {/* Navbar with option to select server */}
-      <Navbar onHomeClick={handleHomeClick} setAdminUrl={setAdminUrl} handleLogin={handleLogin} />
+      <Navbar 
+      onHomeClick={handleHomeClick} 
+      setAdminUrl={setAdminUrl} 
+      handleLogin={handleLogin} 
+      handleServerSelect={handleServerSelect}
+      selectedOption={selectedOption}
+      setSelectedOption={setSelectedOption}
+      isDropdownOpen={isDropdownOpen}
+      setIsDropdownOpen={setIsDropdownOpen}
+
+      />
 
       {!isLogin ? (
         // Home Page with Login and Guest Options
@@ -83,6 +112,8 @@ function App() {
           toggleDropdown={toggleDropdown}
           handleSelect={handleSelect}
           selectedUrl={selectedUrl}
+          selectedOption={selectedOption} 
+          setSelectedOption={setSelectedOption}
         />
       ) :(
         // Show login page inside an iframe
