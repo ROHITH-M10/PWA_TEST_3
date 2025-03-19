@@ -1,26 +1,53 @@
 import React, { useEffect, useState } from "react";
 import { Carousel, Modal } from "antd";
 import Footer from "./Footer";
+import Guest from "./Guest";
 import Sample_Image_1 from "../../public/images/sample_image_amrita_1.jpg";
 import Sample_Image_2 from "../../public/images/sample_image_amrita_2.jpg";
 
-function Home({ handleLogin, handleGuest, isModalVisible, setIsModalVisible }) {
+function Home({handleGuest, isModalVisible, setIsModalVisible, setAdminUrl, openDropdown, toggleDropdown, handleSelect, selectedUrl}) {
 
 
-// Check localStorage on mount
-useEffect(() => {
-  const guestStatus = localStorage.getItem("guestUser");
-  console.log("Guest Status: ", guestStatus);
-  if (!guestStatus && isModalVisible === true) {
-    console.log("Modal visibility on");
-    setIsModalVisible(true); // Show modal if no selection is saved
-  }
-  else {
-    console.log("Modal visibility off");
-    setIsModalVisible(false); // Hide modal if selection is saved
-  }
+// // Check localStorage on mount
+// useEffect(() => {
+//   const guestStatus = localStorage.getItem("guestUser");
+//   console.log("Guest Status: ", guestStatus);
+//   if (!guestStatus && isModalVisible === true) {
+//     console.log("Modal visibility on");
+//     setIsModalVisible(true); // Show modal if no selection is saved
+//   }
+//   else {
+//     console.log("Modal visibility off");
+//     setIsModalVisible(false); // Hide modal if selection is saved
+//   }
   
-}, []);
+// }, []);
+
+const servers = {
+  "Metaflo": "https://research.amritahospitals.org/",
+  "AIMS Metaflo": "https://research-int.amritahospitals.org/",
+  "L1-Staging-Metaflo": "http://test-ahis-l1.amrita.edu/"
+}
+
+  // Handle Server Selection from localStorage
+  useEffect(() => {
+    const server = localStorage.getItem("server");
+    console.log("Server Selected: ", server);
+    if (!server && isModalVisible === true) {
+      console.log("Modal visibility on");
+      setIsModalVisible(true); // Show modal if no selection is saved
+    }
+    else {
+      console.log("Modal visibility off");
+      setIsModalVisible(false); // Hide modal if selection is saved
+      setAdminUrl(servers[server]);
+      console.log("Server selection saved: ", server);
+      console.log("Admin URL: ", servers[server]);
+      // update server
+
+    }
+
+  }, []);
 
 
   
@@ -31,12 +58,19 @@ useEffect(() => {
     setIsModalVisible(false); // Close
   };
 
-  // Save Guest Selection
-  const saveGuestSelection = () => {
-    console.log("Guest Data Saved");
-    localStorage.setItem("guestUser", true); // Save guest selection
+  // // Save Guest Selection
+  // const saveGuestSelection = () => {
+  //   console.log("Guest Data Saved");
+  //   localStorage.setItem("guestUser", true); // Save guest selection
+  //   setIsModalVisible(false); // Close modal
+  //   handleGuest(); // Call guest function
+  // };
+
+  // Save Server Selection
+  const saveServerSelection = (server) => () => {
+    console.log("Server Selected: ", server);
+    localStorage.setItem("server", server); // Save server selection
     setIsModalVisible(false); // Close modal
-    handleGuest(); // Call guest function
   };
 
   return (
@@ -48,10 +82,11 @@ useEffect(() => {
         footer={null}
         centered
       >
-        <p className="modal-text">Would you like to log in or continue as a guest?</p>
+        <p className="modal-text">Please select the server to continue</p>
         <div className="modal-button-container">
-          <button className="modal-login-button" onClick={handleLogin}>Login</button>
-          <button className="modal-guest-button" onClick={saveGuestSelection}>Continue as Guest</button>
+          <button className="modal-metaflo-button" onClick={saveServerSelection("Metaflo")}>Metaflo</button>
+          <button className="modal-aims-metaflo-button" onClick={saveServerSelection("AIMS Metaflo")}>AIMS Metaflo</button>
+          <button className="modal-l1-test-button" onClick={saveServerSelection("L1-Staging-Metaflo")}>L1-Staging-Metaflo</button>
         </div>
       </Modal>
 
@@ -81,10 +116,18 @@ useEffect(() => {
       </Carousel>
 
       {/* Buttons */}
-      <div className="home-button-container">
+      {/* <div className="home-button-container">
         <button className="login-button" onClick={handleLogin}>Login</button>
         <button className="guest-button" onClick={handleGuestSelection}>Continue as Guest</button>
-      </div>
+      </div> */}
+
+
+      <Guest
+        openDropdown={openDropdown}
+        toggleDropdown={toggleDropdown}
+        handleSelect={handleSelect}
+        selectedUrl={selectedUrl}
+      />
 
       {/* Footer */}
       <Footer />

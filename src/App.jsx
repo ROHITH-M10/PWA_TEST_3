@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 
 function App() {
   const [selectedUrl, setSelectedUrl] = useState("");
+
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isGuest, setIsGuest] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
@@ -20,6 +21,12 @@ function App() {
   const [isModalVisible, setIsModalVisible] = useState(
     !localStorage.getItem("guestUser")
   );
+
+  // base URL for the iframe
+  const [adminUrl, setAdminUrl] = useState("https://research.amritahospitals.org/");
+
+  // complete URL for the iframe
+  // const [completeUrl, setCompleteUrl] = useState("");
   
 
   function toggleDropdown(title) {
@@ -28,6 +35,8 @@ function App() {
 
   function handleSelect(url) {
     setSelectedUrl(url);
+    console.log("Selected URL: ", url);
+    // console.log("Complete URL: ", completeUrl);
     setOpenDropdown(null); // Close dropdown after selection
   }
 
@@ -39,6 +48,7 @@ function App() {
   }
 
   function handleLogin() {
+    console.log("Selected server: ", adminUrl);
     setIsLogin(true);
     setIsGuest(false);
     console.log("Login Clicked");
@@ -54,31 +64,31 @@ function App() {
     setIsModalVisible(false);
   }
 
+
   return (
     <div>
-      <Navbar onHomeClick={handleHomeClick} />
+      {/* Navbar with option to select server */}
+      <Navbar onHomeClick={handleHomeClick} setAdminUrl={setAdminUrl} handleLogin={handleLogin} />
 
-      {!isGuest && !isLogin ? (
+      {!isLogin ? (
         // Home Page with Login and Guest Options
         <Home 
           handleLogin={handleLogin} 
           handleGuest={handleGuest} 
           isModalVisible={isModalVisible}
           setIsModalVisible={setIsModalVisible}
-        />
-      ) : isLogin ? (
-        // Show login page inside an iframe
-        <Login />
-      ) : (
-        // Guest Page with Modules and Dropdowns
-        <Guest
+          setAdminUrl={setAdminUrl}
+          // for guest selection
           openDropdown={openDropdown}
           toggleDropdown={toggleDropdown}
           handleSelect={handleSelect}
           selectedUrl={selectedUrl}
         />
-
-      )}
+      ) :(
+        // Show login page inside an iframe
+        <Login adminUrl={adminUrl} />
+      ) 
+      }
 
     </div>
   );

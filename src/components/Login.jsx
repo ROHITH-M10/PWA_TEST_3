@@ -1,9 +1,10 @@
 import React from 'react'
 
-function Login() {
+function Login({adminUrl}) {
+  console.log("Admin URL: ", adminUrl);
   return (
     <div className="login-iframe-container">
-          <iframe src="https://research.amritahospitals.org/" title="Login Page"></iframe>
+          <iframe src={adminUrl} title="content-frame"></iframe>
     </div>
   )
 }
