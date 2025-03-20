@@ -16,9 +16,9 @@ function App() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isGuest, setIsGuest] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(localStorage.getItem("server") ? false : true);
   const [adminUrl, setAdminUrl] = useState("https://research.amritahospitals.org/");
-  const [selectedServerOption, setSelectedServerOption] = useState("Metaflo");
+  const [selectedServerOption, setSelectedServerOption] = useState(localStorage.getItem("server") ? localStorage.getItem("server") : "Metaflo");
   const [isServerDropdownOpen, setIsServerDropdownOpen] = useState(false);
 
   // complete URL for the iframe
@@ -35,7 +35,7 @@ function App() {
 
   const handleServerSelect = (option) => {
     setSelectedServerOption(option);
-    setisServerDropdownOpen(false); // Close dropdown after selection
+    setIsServerDropdownOpen(false); // Close dropdown after selection
     setAdminUrl(servers[option]);
     console.log("Selected Server:", option);
   };
@@ -81,6 +81,17 @@ function App() {
     setIsModalVisible(false);
   }
 
+    // Save Server Selection
+    const saveServerSelection = (server) => () => {
+      console.log("Server Selected: ", server);
+      localStorage.setItem("server", server); // Save server selection
+      setIsModalVisible(false); // Close modal
+      setAdminUrl(servers[server]);
+      console.log("Admin URL: ", servers[server]);
+      setSelectedServerOption(server);
+  
+    };
+
 
   return (
     <div>
@@ -112,6 +123,7 @@ function App() {
           selectedUrl={selectedUrl}
           selectedServerOption={selectedServerOption} 
           setSelectedServerOption={setSelectedServerOption}
+          saveServerSelection={saveServerSelection}
         />
       ) :(
         // Show login page inside an iframe
