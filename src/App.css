@@ -118,7 +118,7 @@ body {
 
 
 .home-title{
-  font-size: 4rem;
+  font-size: 3rem;
   margin: 20px;
   padding: 20px 0px;
   padding-bottom: 0;
@@ -203,7 +203,7 @@ body {
 .guest-page {
   text-align: center;
   padding: 20px;
-  margin-top: 6vh; /* Adjust margin to avoid navbar overlap */
+  margin-top: 3vh; /* Adjust margin to avoid navbar overlap */
 }
 
 
@@ -234,7 +234,7 @@ body {
   background-color: rgb(165, 42, 42);
   border: solid 1px rgb(165, 42, 42);
   color: white;
-  padding: 10px;
+  padding: 15px;
   font-size: 1.2rem;
   cursor: pointer;
   border-radius: 20px;
