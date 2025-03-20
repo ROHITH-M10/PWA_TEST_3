@@ -22,15 +22,15 @@ function App() {
     false
   );
 
-  // base URL for the iframe
+  // Admin URL for login by default
   const [adminUrl, setAdminUrl] = useState("https://research.amritahospitals.org/");
 
   // complete URL for the iframe
   // const [completeUrl, setCompleteUrl] = useState("");
   
-  const [selectedOption, setSelectedOption] = useState("Metaflo");
+  const [selectedServerOption, setSelectedServerOption] = useState("Metaflo");
 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isServerDropdownOpen, setisServerDropdownOpen] = useState(false);
 
 
   const servers = {
@@ -41,8 +41,8 @@ function App() {
 
 
   const handleServerSelect = (option) => {
-    setSelectedOption(option);
-    setIsDropdownOpen(false); // Close dropdown after selection
+    setSelectedServerOption(option);
+    setisServerDropdownOpen(false); // Close dropdown after selection
     setAdminUrl(servers[option]);
     console.log("Selected Server:", option);
   };
@@ -51,6 +51,8 @@ function App() {
   function toggleDropdown(title) {
     setOpenDropdown((prev) => (prev === title ? null : title));
   }
+
+  
 
   function handleSelect(url) {
     setSelectedUrl(url);
@@ -92,10 +94,10 @@ function App() {
       setAdminUrl={setAdminUrl} 
       handleLogin={handleLogin} 
       handleServerSelect={handleServerSelect}
-      selectedOption={selectedOption}
-      setSelectedOption={setSelectedOption}
-      isDropdownOpen={isDropdownOpen}
-      setIsDropdownOpen={setIsDropdownOpen}
+      selectedServerOption={selectedServerOption}
+      setSelectedServerOption={setSelectedServerOption}
+      isServerDropdownOpen={isServerDropdownOpen}
+      setIsServerDropdownOpen={setisServerDropdownOpen}
 
       />
 
@@ -112,8 +114,8 @@ function App() {
           toggleDropdown={toggleDropdown}
           handleSelect={handleSelect}
           selectedUrl={selectedUrl}
-          selectedOption={selectedOption} 
-          setSelectedOption={setSelectedOption}
+          selectedServerOption={selectedServerOption} 
+          setSelectedServerOption={setSelectedServerOption}
         />
       ) :(
         // Show login page inside an iframe

@@ -5,7 +5,7 @@ import Guest from "./Guest";
 import Sample_Image_1 from "../../public/images/sample_image_amrita_1.jpg";
 import Sample_Image_2 from "../../public/images/sample_image_amrita_2.jpg";
 
-function Home({handleGuest, isModalVisible, setIsModalVisible, setAdminUrl, openDropdown, toggleDropdown, handleSelect, selectedUrl, selectedOption, setSelectedOption}) {
+function Home({handleGuest, isModalVisible, setIsModalVisible, setAdminUrl, openDropdown, toggleDropdown, handleSelect, selectedUrl, selectedServerOption, setSelectedServerOption}) {
 
 
 // // Check localStorage on mount
@@ -48,7 +48,7 @@ const servers = {
       console.log("Server selection saved: ", server);
       setIsModalVisible(false); // Hide modal if selection is saved
       setAdminUrl(servers[server]);
-      setSelectedOption(server);
+      setSelectedServerOption(server);
       console.log("Server selection saved: ", server);
       console.log("Admin URL: ", servers[server]);
       // update server
@@ -82,7 +82,7 @@ const servers = {
     setIsModalVisible(false); // Close modal
     setAdminUrl(servers[server]);
     console.log("Admin URL: ", servers[server]);
-    setSelectedOption(server);
+    setSelectedServerOption(server);
 
   };
 
