@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 
-function Navbar({ onHomeClick, setAdminUrl, handleLogin, selectedServerOption, setSelectedServerOption, handleServerSelect, setIsServerDropdownOpen, isServerDropdownOpen }) {
-
-
-
-
-  const toggleServerDropdown = () => {
-    setIsServerDropdownOpen(!isServerDropdownOpen);
-  };
-
+function Navbar({ onHomeClick, setAdminUrl, handleLogin, selectedServerOption, setSelectedServerOption, handleServerSelect, setIsServerDropdownOpen, isServerDropdownOpen, toggleServerDropdown }) {
 
 
   return (

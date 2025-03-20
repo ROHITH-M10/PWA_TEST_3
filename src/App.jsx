@@ -13,24 +13,17 @@ import Footer from "./components/Footer";
 
 function App() {
   const [selectedUrl, setSelectedUrl] = useState("");
-
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isGuest, setIsGuest] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
-  // Modal for first-time using the app
-  const [isModalVisible, setIsModalVisible] = useState(
-    false
-  );
-
-  // Admin URL for login by default
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [adminUrl, setAdminUrl] = useState("https://research.amritahospitals.org/");
+  const [selectedServerOption, setSelectedServerOption] = useState("Metaflo");
+  const [isServerDropdownOpen, setIsServerDropdownOpen] = useState(false);
 
   // complete URL for the iframe
   // const [completeUrl, setCompleteUrl] = useState("");
   
-  const [selectedServerOption, setSelectedServerOption] = useState("Metaflo");
-
-  const [isServerDropdownOpen, setisServerDropdownOpen] = useState(false);
 
 
   const servers = {
@@ -52,6 +45,9 @@ function App() {
     setOpenDropdown((prev) => (prev === title ? null : title));
   }
 
+  const toggleServerDropdown = () => {
+    setIsServerDropdownOpen(!isServerDropdownOpen);
+  };
   
 
   function handleSelect(url) {
@@ -97,8 +93,8 @@ function App() {
       selectedServerOption={selectedServerOption}
       setSelectedServerOption={setSelectedServerOption}
       isServerDropdownOpen={isServerDropdownOpen}
-      setIsServerDropdownOpen={setisServerDropdownOpen}
-
+      setIsServerDropdownOpen={setIsServerDropdownOpen}
+      toggleServerDropdown={toggleServerDropdown}
       />
 
       {!isLogin ? (
