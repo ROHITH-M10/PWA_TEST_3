@@ -52,6 +52,7 @@ function App() {
 
   function handleSelect(url) {
     setSelectedUrl(url);
+    setIsServerDropdownOpen(false); // Close dropdown after selection
     console.log("Selected URL: ", url);
     // console.log("Complete URL: ", completeUrl);
     setOpenDropdown(null); // Close dropdown after selection
@@ -59,6 +60,7 @@ function App() {
 
   function handleHomeClick() {
     setSelectedUrl("");
+    setIsServerDropdownOpen(false); // Close dropdown after selection
     setIsGuest(false);
     setIsLogin(false); // Reset to home page
     window.scrollTo(0, 0);
@@ -66,6 +68,7 @@ function App() {
 
   function handleLogin() {
     console.log("Selected server: ", adminUrl);
+    setIsServerDropdownOpen(false); // Close dropdown after selection
     setIsLogin(true);
     setIsGuest(false);
     console.log("Login Clicked");

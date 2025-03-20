@@ -286,6 +286,7 @@ body {
   left: 0;
   width: 100%;
   height: 94%;
+  z-index: 1000;
 }
 
 .guest-iframe-container iframe {
