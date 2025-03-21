@@ -7,6 +7,9 @@ import Login from "./components/Login";
 import Guest from "./components/Guest";
 import Footer from "./components/Footer";
 
+// Import servers 
+import servers from "./data/servers.json";
+
 // // Import pages
 // import generalPages from "./data/generalPages.json";
 // import domainOne from "./data/domainOnePages.json";
@@ -26,11 +29,6 @@ function App() {
   
 
 
-  const servers = {
-    "Metaflo": "https://research.amritahospitals.org/",
-    "AIMS Metaflo": "https://research-int.amritahospitals.org/",
-    "L1-Staging-Metaflo": "http://test-ahis-l1.amrita.edu/"
-  }
 
 
   const handleServerSelect = (option) => {
