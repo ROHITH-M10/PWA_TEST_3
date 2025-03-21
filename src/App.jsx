@@ -13,7 +13,7 @@ import Footer from "./components/Footer";
 
 function App() {
   const [selectedUrl, setSelectedUrl] = useState("");
-  const [openDropdown, setOpenDropdown] = useState(null);
+  const [openDropdown, setOpenDropdown] = useState(false);
   const [isGuest, setIsGuest] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(localStorage.getItem("server") ? false : true);
@@ -62,6 +62,7 @@ function App() {
     setSelectedUrl("");
     setIsServerDropdownOpen(false); // Close dropdown after selection
     setIsGuest(false);
+    setOpenDropdown(false);
     setIsLogin(false); // Reset to home page
     window.scrollTo(0, 0);
   }

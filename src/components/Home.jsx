@@ -96,7 +96,7 @@ const servers = {
         footer={null}
         centered
       >
-        <p className="modal-text">Please select the server to continue</p>
+        <p className="modal-text">Select your preferred server</p>
         <div className="modal-button-container">
           <button className="modal-metaflo-button" onClick={saveServerSelection("Metaflo")}>Metaflo</button>
           <button className="modal-aims-metaflo-button" onClick={saveServerSelection("AIMS Metaflo")}>AIMS Metaflo</button>
