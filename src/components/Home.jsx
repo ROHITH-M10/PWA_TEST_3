@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import Guest from "./Guest";
 import Sample_Image_1 from "../../public/images/sample_image_amrita_1.jpg";
 import Sample_Image_2 from "../../public/images/sample_image_amrita_2.jpg";
+import servers from "../data/servers.json";
 
 function Home({handleGuest, isModalVisible, setIsModalVisible, setAdminUrl, openDropdown, toggleDropdown, handleSelect, selectedUrl, selectedServerOption, setSelectedServerOption, saveServerSelection}) {
 
@@ -23,11 +24,11 @@ function Home({handleGuest, isModalVisible, setIsModalVisible, setAdminUrl, open
   
 // }, []);
 
-const servers = {
-  "Metaflo": "https://research.amritahospitals.org/",
-  "AIMS Metaflo": "https://research-int.amritahospitals.org/",
-  "L1-Staging-Metaflo": "http://test-ahis-l1.amrita.edu/"
-}
+// const servers = {
+//   "Metaflo": "https://research.amritahospitals.org/",
+//   "AIMS Metaflo": "https://research-int.amritahospitals.org/",
+//   "L1-Staging-Metaflo": "http://test-ahis-l1.amrita.edu/"
+// }
 
   // Handle Server Selection from localStorage
   useEffect(() => {
