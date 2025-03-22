@@ -10,7 +10,7 @@ function Navbar({ onHomeClick, setAdminUrl, handleLogin, selectedServerOption, s
       </button>
       <div className="menu-container">
         <i onClick={toggleServerDropdown} className="fa fa-server"></i>
-        <i onClick={handleLogin} className="fa fa-sign-in"></i>
+        <i onClick={handleLogin} className="fa fa-user-circle"></i>
 
         {isServerDropdownOpen && (
           <div className="menu-dropdown">

@@ -129,7 +129,9 @@ function App() {
         />
       ) :(
         // Show login page inside an iframe
-        <Login adminUrl={adminUrl} />
+        <Login adminUrl={adminUrl} 
+        onHomeClick={handleHomeClick}
+        />
       ) 
       }
 

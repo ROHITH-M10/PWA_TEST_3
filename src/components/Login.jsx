@@ -1,12 +1,45 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { Spin } from 'antd';
+import ServerError from "./ServerError";
 
-function Login({adminUrl}) {
-  console.log("Admin URL: ", adminUrl);
+function Login({ adminUrl, onHomeClick }) {
+  const [isAccessible, setIsAccessible] = useState(null);
+
+  useEffect(() => {
+    const checkServer = async () => {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000); // 5s timeout
+
+        const response = await fetch(adminUrl, { method: "HEAD", signal: controller.signal });
+
+        clearTimeout(timeoutId);
+        setIsAccessible(response.ok);
+      } catch (error) {
+        setIsAccessible(false); // If fetch fails, mark as inaccessible
+      }
+    };
+
+    checkServer();
+  }, [adminUrl]);
+
   return (
     <div className="login-iframe-container">
-          <iframe src={adminUrl} title="content-frame"></iframe>
+      {isAccessible === null ? (
+        <div className="login-checking-server">
+          <Spin size="large" />
+          <p className="login-checking-server-text">Checking server availability...</p>
+
+        </div>
+      ) : isAccessible ? (
+        <iframe src={adminUrl} title="content-frame"></iframe>
+      ) : (
+        <ServerError
+          onHomeClick={onHomeClick}
+        />
+      )}
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;
