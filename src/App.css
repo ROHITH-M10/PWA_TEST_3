@@ -243,6 +243,7 @@ body {
   text-align: center;
   padding: 20px;
   margin-top: 3vh; /* Adjust margin to avoid navbar overlap */
+  margin-bottom: 3vh;
 }
 
 
@@ -296,7 +297,7 @@ body {
   top: 100%; /* Position below the button */
   /* left: 0; */
   margin-top: 0px; /* Add space between button and dropdown */
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   overflow: hidden;
   z-index: 1000; /* Ensure it appears above other elements */
