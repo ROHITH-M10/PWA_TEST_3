@@ -12,8 +12,8 @@ export default defineConfig({
         enabled: true
       },
       manifest: {
-        name: "Amrita PWA",
-        short_name: "Amrita PWA",
+        name: "Amrita HealthConnect",
+        short_name: "Amrita HealthConnect",
         description: "PWA App for Amrita Hospital",
         theme_color: "#ffffff",
         background_color: "#ffffff",

@@ -1,8 +1,8 @@
 import React from "react";
 import Dropdown from "./Dropdown";
 // Import pages
-import generalPages from "../data/generalPages.json";
-import domainOne from "../data/domainOnePages.json";
+import AdministrativeForms from "../data/AdministrativeForms.json";
+import ResearchForms from "../data/ResearchForms.json";
 
 function Guest({ openDropdown, toggleDropdown, handleSelect, selectedUrl }) {
   return (
@@ -10,16 +10,16 @@ function Guest({ openDropdown, toggleDropdown, handleSelect, selectedUrl }) {
       {/* Dropdowns */}
       <div className="guest-dropdown-button-container">
         <Dropdown
-          title="General Pages"
-          items={generalPages}
-          isOpen={openDropdown === "General Pages"}
+          title="Administrative Forms"
+          items={AdministrativeForms}
+          isOpen={openDropdown === "Administrative Forms"}
           toggleDropdown={toggleDropdown}
           onSelect={handleSelect}
         />
         <Dropdown
-          title="Module One Pages"
-          items={domainOne}
-          isOpen={openDropdown === "Module One Pages"}
+          title="Research Forms"
+          items={ResearchForms}
+          isOpen={openDropdown === "Research Forms"}
           toggleDropdown={toggleDropdown}
           onSelect={handleSelect}
         />

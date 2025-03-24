@@ -113,11 +113,18 @@ function Home({handleGuest, isModalVisible, setIsModalVisible, setAdminUrl, open
         />
       </div>
 
-      <div className="home-title">TITLE</div>
+      <div className="home-title">Amrita HealthConnect</div>
       <p className="home-text">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam sapiente nulla ex nostrum dolor molestias expedita molestiae nihil! Quas quidem sed doloribus quasi iusto sunt ullam deserunt, enim quae consequatur!
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos perferendis numquam excepturi architecto reprehenderit doloribus aliquam! Veritatis nihil recusandae officiis vitae consequuntur? Vero molestias numquam quaerat culpa esse vitae quo?
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, distinctio quidem ut et atque, eaque inventore minima explicabo a deserunt dolore nemo quasi suscipit maiores culpa tempora dolor totam fugit?
+      Amrita Hospital, located in Kochi, is one of Asia's largest private hospitals. Established in 1998 by Sri Mata Amritanandamayi Devi (AMMA), it has provided advanced healthcare to over 10 million individuals. The hospital has expanded to Faridabad, Delhi, and operates using the Amrita Hospital Information Suite (HIS), developed by Amrita Technologies. This system securely stores extensive patient data, which has been accumulated over two decades. This data serves as a valuable resource for doctors, researchers, students, and collaborators, supporting future studies, informed decision-making, and problem-solving for societal benefit.
+      <br />
+      <br />
+
+      To further enhance data collection and research capabilities, a dedicated mobile app is being introduced. This app will facilitate prospective data collection from patients, supporting community health initiatives and clinical research projects. By allowing real-time data entry and secure patient interactions, the app aims to improve early disease detection, monitor public health trends, and provide valuable insights for medical advancements.
+      <br />
+      <br />
+      The use of this app is governed by the Amrita Hospital Data Sharing Policy(
+      <a href="https://research.amritahospitals.org/files/Data_Sharing_Policy_AIMS_Review.pdf" target="_blank" rel="noopener noreferrer">Open</a>
+      ), ensuring that all collected data is securely managed and utilized in compliance with ethical and regulatory standards. Patient confidentiality, data security, and responsible usage are central to this policy, reinforcing Amrita Hospital's commitment to maintaining the highest standards of medical research and public health initiatives.
       </p>
 
       {/* Carousel */}
