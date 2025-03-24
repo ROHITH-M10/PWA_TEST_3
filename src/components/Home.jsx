@@ -113,7 +113,7 @@ function Home({handleGuest, isModalVisible, setIsModalVisible, setAdminUrl, open
         />
       </div>
 
-      <div className="home-title">PWA TITLE</div>
+      <div className="home-title">TITLE</div>
       <p className="home-text">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam sapiente nulla ex nostrum dolor molestias expedita molestiae nihil! Quas quidem sed doloribus quasi iusto sunt ullam deserunt, enim quae consequatur!
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos perferendis numquam excepturi architecto reprehenderit doloribus aliquam! Veritatis nihil recusandae officiis vitae consequuntur? Vero molestias numquam quaerat culpa esse vitae quo?
