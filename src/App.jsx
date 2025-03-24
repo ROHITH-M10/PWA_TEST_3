@@ -21,7 +21,7 @@ function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(localStorage.getItem("server") ? false : true);
   const [adminUrl, setAdminUrl] = useState("https://research.amritahospitals.org/");
-  const [selectedServerOption, setSelectedServerOption] = useState(localStorage.getItem("server") ? localStorage.getItem("server") : "Metaflo");
+  const [selectedServerOption, setSelectedServerOption] = useState(localStorage.getItem("server") ? localStorage.getItem("server") : "Web Forms");
   const [isServerDropdownOpen, setIsServerDropdownOpen] = useState(false);
 
   // complete URL for the iframe

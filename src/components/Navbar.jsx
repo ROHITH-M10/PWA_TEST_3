@@ -15,23 +15,23 @@ function Navbar({ onHomeClick, setAdminUrl, handleLogin, selectedServerOption, s
         {isServerDropdownOpen && (
           <div className="menu-dropdown">
             <div 
-              className={`menu-dropdown-item ${selectedServerOption === "Metaflo" ? "server-selected" : ""}`} 
-              onClick={() => handleServerSelect("Metaflo")}
+              className={`menu-dropdown-item ${selectedServerOption === "Web Forms" ? "server-selected" : ""}`} 
+              onClick={() => handleServerSelect("Web Forms")}
             >
-              Metaflo
+              Web Forms
             </div>
             <div 
-              className={`menu-dropdown-item ${selectedServerOption === "AIMS Metaflo" ? "server-selected" : ""}`} 
-              onClick={() => handleServerSelect("AIMS Metaflo")}
+              className={`menu-dropdown-item ${selectedServerOption === "Registries" ? "server-selected" : ""}`} 
+              onClick={() => handleServerSelect("Registries")}
             >
-              AIMS Metaflo
+              Registries
             </div>
 
             <div 
-              className={`menu-dropdown-item ${selectedServerOption === "L1-Staging-Metaflo" ? "server-selected" : ""}`}
-              onClick={() => handleServerSelect("L1-Staging-Metaflo")}
+              className={`menu-dropdown-item ${selectedServerOption === "Staging / Test" ? "server-selected" : ""}`}
+              onClick={() => handleServerSelect("Staging / Test")}
             >
-              L1-Staging-Metaflo
+              Staging / Test
             </div>
 
 

@@ -99,9 +99,9 @@ function Home({handleGuest, isModalVisible, setIsModalVisible, setAdminUrl, open
       >
         <p className="modal-text">Select your preferred server</p>
         <div className="modal-button-container">
-          <button className="modal-metaflo-button" onClick={saveServerSelection("Metaflo")}>Metaflo</button>
-          <button className="modal-aims-metaflo-button" onClick={saveServerSelection("AIMS Metaflo")}>AIMS Metaflo</button>
-          <button className="modal-l1-test-button" onClick={saveServerSelection("L1-Staging-Metaflo")}>L1-Staging-Metaflo</button>
+          <button className="modal-metaflo-button" onClick={saveServerSelection("Web Forms")}>Web Forms</button>
+          <button className="modal-aims-metaflo-button" onClick={saveServerSelection("Registries")}>Registries</button>
+          <button className="modal-l1-test-button" onClick={saveServerSelection("Staging / Test")}>Staging / Test</button>
         </div>
       </Modal>
 
@@ -113,7 +113,7 @@ function Home({handleGuest, isModalVisible, setIsModalVisible, setAdminUrl, open
         />
       </div>
 
-      <div className="home-title">Amrita HealthConnect</div>
+      <div className="home-title">AIMS Research Portal</div>
       <p className="home-text">
       Amrita Hospital, located in Kochi, is one of Asia's largest private hospitals. Established in 1998 by Sri Mata Amritanandamayi Devi (AMMA), it has provided advanced healthcare to over 10 million individuals. The hospital has expanded to Faridabad, Delhi, and operates using the Amrita Hospital Information Suite (HIS), developed by Amrita Technologies. This system securely stores extensive patient data, which has been accumulated over two decades. This data serves as a valuable resource for doctors, researchers, students, and collaborators, supporting future studies, informed decision-making, and problem-solving for societal benefit.
       <br />

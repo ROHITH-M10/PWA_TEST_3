@@ -6,6 +6,8 @@ function Login({ adminUrl, onHomeClick }) {
   const [isAccessible, setIsAccessible] = useState(null);
 
   useEffect(() => {
+
+    setIsAccessible(null); // Reset state on every new URL
     const checkServer = async () => {
       try {
         const controller = new AbortController();

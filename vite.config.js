@@ -12,9 +12,9 @@ export default defineConfig({
         enabled: true
       },
       manifest: {
-        name: "Amrita HealthConnect",
-        short_name: "Amrita HealthConnect",
-        description: "PWA App for Amrita Hospital",
+        name: "AIMS Research Portal",
+        short_name: "AIMS Research Portal",
+        description: "AIMS Research Portal",
         theme_color: "#ffffff",
         background_color: "#ffffff",
         display: "standalone",
