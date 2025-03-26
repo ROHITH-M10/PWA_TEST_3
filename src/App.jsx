@@ -24,6 +24,7 @@ function App() {
   const [selectedServerOption, setSelectedServerOption] = useState(localStorage.getItem("server") ? localStorage.getItem("server") : "Web Forms");
   const [isServerDropdownOpen, setIsServerDropdownOpen] = useState(false);
 
+  const [loginReload, setLoginReload] = useState(false); // new state to reload login page
   // complete URL for the iframe
   // const [completeUrl, setCompleteUrl] = useState("");
   
@@ -68,6 +69,8 @@ function App() {
   function handleLogin() {
     console.log("Selected server: ", adminUrl);
     setIsServerDropdownOpen(false); // Close dropdown after selection
+    setIsLogin(false);
+    setLoginReload(prev => prev + 1); // Reload login page
     setIsLogin(true);
     setIsGuest(false);
     console.log("Login Clicked");
@@ -131,6 +134,7 @@ function App() {
         // Show login page inside an iframe
         <Login adminUrl={adminUrl} 
         onHomeClick={handleHomeClick}
+        loginReload={loginReload}
         />
       ) 
       }

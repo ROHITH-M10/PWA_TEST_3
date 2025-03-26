@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Spin } from 'antd';
 import ServerError from "./ServerError";
 
-function Login({ adminUrl, onHomeClick }) {
+function Login({ adminUrl, onHomeClick ,  loginReload}) {
   const [isAccessible, setIsAccessible] = useState(null);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ function Login({ adminUrl, onHomeClick }) {
     };
 
     checkServer();
-  }, [adminUrl]);
+  }, [adminUrl, loginReload]);
 
   return (
     <div className="login-iframe-container">
