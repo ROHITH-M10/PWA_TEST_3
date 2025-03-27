@@ -1,5 +1,5 @@
 {
-    "Web Forms": "https://research.amritahospitals.org/app",
+    "Web Forms": "/app",
     "Registries": "https://research-int.amritahospitals.org/app",
     "Staging / Test": "https://test-ahis-l1.amrita.edu/app"
 } 
