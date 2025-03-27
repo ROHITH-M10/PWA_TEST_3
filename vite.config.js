@@ -34,49 +34,51 @@ export default defineConfig({
       }
     })
   ],
-  server: {
-    proxy: {
+  // server: {
+  //   proxy: {
       
-      "/login": {
-        target: "https://research.amritahospitals.org",
-        changeOrigin: true,
-        // rewrite: (path) => path.replace(/^\/proxy-webforms/, "/app"),
-      },
-      "/assets": {
-        target: "https://research.amritahospitals.org",
-        changeOrigin: true,
-        // rewrite: (path) => path.replace(/^\/proxy-webforms/, "/app"),
-      },
+  //     "/login": {
+  //       target: "https://research.amritahospitals.org",
+  //       changeOrigin: true,
+  //       // rewrite: (path) => path.replace(/^\/proxy-webforms/, "/app"),
+  //     },
+  //     "/assets": {
+  //       target: "https://research.amritahospitals.org",
+  //       changeOrigin: true,
+  //       // rewrite: (path) => path.replace(/^\/proxy-webforms/, "/app"),
+  //     },
 
-      "/app": {
-        target: "https://research.amritahospitals.org",
-        changeOrigin: true,
-        // rewrite: (path) => path.replace(/^\/proxy-webforms/, "/app"),
-      },
+  //     "/app": {
+  //       target: "https://research.amritahospitals.org",
+  //       changeOrigin: true,
+  //       // rewrite: (path) => path.replace(/^\/proxy-webforms/, "/app"),
+  //     },
 
-      "/website_script.js": {
-        target: "https://research.amritahospitals.org",
-        changeOrigin: true,
-        // rewrite: (path) => path.replace(/^\/proxy-webforms/, "/app"),
-      },
+  //     "/website_script.js": {
+  //       target: "https://research.amritahospitals.org",
+  //       changeOrigin: true,
+  //       // rewrite: (path) => path.replace(/^\/proxy-webforms/, "/app"),
+  //     },
 
-      "/api": {
-        target: "https://research.amritahospitals.org",
-        changeOrigin: true,
-        // rewrite: (path) => path.replace(/^\/proxy-webforms/, "/app"),
-      },
+  //     "/api": {
+  //       target: "https://research.amritahospitals.org",
+  //       changeOrigin: true,
+  //       // rewrite: (path) => path.replace(/^\/proxy-webforms/, "/app"),
+  //     },
 
 
-      "/proxy-registries": {
-        target: "https://research-int.amritahospitals.org",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/proxy-registries/, ""),
-      },
-      "/proxy-staging": {
-        target: "https://test-ahis-l1.amrita.edu",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/proxy-staging/, ""),
-      }
-    }
-  }
+
+
+  //     "/proxy-registries": {
+  //       target: "https://research-int.amritahospitals.org",
+  //       changeOrigin: true,
+  //       rewrite: (path) => path.replace(/^\/proxy-registries/, ""),
+  //     },
+  //     "/proxy-staging": {
+  //       target: "https://test-ahis-l1.amrita.edu",
+  //       changeOrigin: true,
+  //       rewrite: (path) => path.replace(/^\/proxy-staging/, ""),
+  //     }
+  //   }
+  // }
 });
